@@ -2,9 +2,11 @@
 
 ## Tools
 
+- [Makefile]
+- [Terragrunt]
+- [Docker]
 - [Terraform](https://www.terraform.io/downloads.html)
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-- [aws-azure-login](https://sainsburys-confluence.valiantys.net/pages/viewpage.action?spaceKey=CENG&title=AWS+Access%3A+User+Guide)
 - [tflint](https://github.com/terraform-linters/tflint)
 
 ### Pre-Commit Terraform
@@ -18,11 +20,34 @@
 
 ### Commands to run on MacOS to install all the above dependencies
 
-You can simply run `make install` from the root of this repository to install all of the below requirements.
-The [Makefile](../Makefile) defaults to a certain version of Terraform. For specific versions:
-
 ```bash
 make install TERRAFORM_VERSON=0.12.26
 ```
 
 Run `make help` to see all the individual targets.
+
+### Features
+- Pre-Commit
+  - Terraform Format
+  - Terraform Docs (auto-generation based on inputs/outputs/providers)
+  - Terraform Validate
+  - Trailing Whitespaces, EOF fixer, JSON check, etc. See [.pre-commit-yaml]
+
+- GitHub Actions (GHA)
+  - Stale PRs
+  - Danger checks (commit message length, naming conventions, etc)
+  - Terraform Formatting
+  - [TFLint](https://github.com/terraform-linters/tflint)
+  - Checkov (AWS Security Best Practices)
+  - Semantic Release
+  - [PR Labeler](https://github.com/actions/labeler/blob/master/README.md)
+
+- Templates
+  - PRs
+  - Issues
+
+- Automated Labeling of PRs
+  - GitHub workflow/template changes
+  - Documentation updates
+  - Semantic Release config
+  - General repo config
