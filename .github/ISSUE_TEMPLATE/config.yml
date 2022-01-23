@@ -1,0 +1,6 @@
+# Ref: https://help.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository#configuring-the-template-chooser
+blank_issues_enabled: true # default
+contact_links:
+  - name: 💬 DCE community (Slack)
+    url: gol.cloudengineering@sainsburys.co.uk
+    about: Please ask and answer questions here
