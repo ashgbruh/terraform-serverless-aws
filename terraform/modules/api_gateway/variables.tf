@@ -14,11 +14,11 @@ variable "environment_tags" {
 }
 
 variable "integration_uri" {
-  description = "cron expression for firing up the lambda function"
+  description = "lambda integration uri"
   type        = string
 }
 
 variable "lambda_function_name" {
-  description = "cron expression for firing up the lambda function"
+  description = "lambda function"
   type        = string
 }
