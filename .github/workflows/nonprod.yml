@@ -1,7 +1,5 @@
 name: Deploy
-on:
-  pull_request:
-    branches: [ main ]
+on: [pull_request]
 
 jobs:
   build:
@@ -19,8 +17,6 @@ jobs:
     environment: 
       name: nonprod
     steps:
-      - name: Deploy
-        run: deploying! 
         
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v1.1.0
