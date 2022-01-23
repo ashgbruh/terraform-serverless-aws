@@ -3,8 +3,6 @@ name: Deploy to nonprod environment
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -20,6 +18,16 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
+    
+    - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Terragrunt
+        uses: autero1/action-terragrunt@v1.1.0
+        with:
+          terragrunt_version: 0.21.13
+    
+    - name: Interact with Terragrunt
+        run: terragrunt --version
       
     - name: run make command
       run: make deploy
