@@ -1,5 +1,3 @@
-Thanks for contributing to the Digital PaaS Core repository! To speed up the process of reviewing your pull request please make sure:
-
 * Your commit messages follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/#summary), specifically those for [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
 
 ##### SUMMARY

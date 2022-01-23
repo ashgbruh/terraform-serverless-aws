@@ -1,3 +1,3 @@
-# DCE Terraform Template
+# Terraform Template
 
 A template repo for Terraform projects.

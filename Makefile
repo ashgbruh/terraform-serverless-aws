@@ -3,7 +3,7 @@
 
 .DEFAULT_GOAL := help
 SHELL := /bin/bash
-TERRAFORM_VERSION ?= 0.12.26
+TERRAFORM_VERSION ?= 1.0.0
 export TERRAFORM_VERSION
 
 BREWLIST := $(shell brew list)
@@ -11,12 +11,6 @@ BREWLIST := $(shell brew list)
 ## Run brew update
 update:
 	brew update
-
-## Install aws-azure-login
-aws-azure-login:
-	@echo installing aws-azure-login;
-	@if [[ ! "$(BREWLIST)" =~ "node " ]]; then brew install node; fi
-	@npm list -g aws-azure-login || npm install -g aws-azure-login
 
 ## Install terraform via brew & tfenv
 terraform:
@@ -37,8 +31,15 @@ deps:
 	@if [[ ! "$(BREWLIST)" =~ "tflint " ]]; then brew install tflint; fi
 	@if [[ ! "$(BREWLIST)" =~ "pre-commit " ]]; then brew install pre-commit; pre-commit install; fi
 
-## Install all Digital PaaS dependencies
-install: update deps terraform aws-azure-login
+
+
+## Deploy
+deploy:
+	build/deploy.sh
+
+## Destroy
+destroy:
+	build/destroy.sh
 
 ## See all the Makefile targets
 help:
