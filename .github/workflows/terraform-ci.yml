@@ -21,17 +21,3 @@ jobs:
 
       - name: Terraform Format
         run: terraform fmt -recursive -diff=true -check=true .
-
-      - name: Run TFLint
-        uses: reviewdog/action-tflint@v1.1.1
-        with:
-          github_token: ${{ secrets.github_token }}
-          fail_on_error: true
-          working_directory: .
-
-      - name: checkov
-        uses: bridgecrewio/checkov-action@v13
-        with:
-          directory: terraform/modules
-          skip_check: CKV_AWS_21,CKV_AWS_52,CKV_AWS_53,CKV_AWS_54
-          quiet: true
