@@ -15,7 +15,7 @@ variable "environment_tags" {
 
 
 variable "table_name" {
-  description = "cron expression for firing up the lambda function"
+  description = "dynamodb table name"
   type        = string
 }
 
