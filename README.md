@@ -1,4 +1,4 @@
-# Provisioning Serverless infrastructure to 
+# Provision Serverless infrastructure using Terraform on AWS
 
 Please export your AWS envrionment variables
 ```
