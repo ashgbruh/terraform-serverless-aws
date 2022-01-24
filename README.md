@@ -1,46 +1,18 @@
-# dce-terraform-template
-Template Repo for Terraform projects for the DCE team
+# Provisioning Serverless infrastructure to 
 
+Please export your AWS envrionment variables
+```
+export AWS_ACCESS_KEY_ID=**************
+export AWS_SECRET_ACCESS_KEY=******************
+export AWS_DEFAULT_REGION=eu-west-1
+export AWS_ACCOUNT_ID=***************
+```
+The steps below assumes the prereqs have been installed.
 
-### Features
-- Pre-Commit
-  - Terraform Format
-  - Terraform Docs (auto-generation based on inputs/outputs/providers)
-  - Terraform Validate
-  - Trailing Whitespaces, EOF fixer, JSON check, etc. See [.pre-commit-yaml]
+Run the command ```make deploy``` from the root - This will spin up the serverless environment.
 
-- GitHub Actions (GHA)
-  - Stale PRs
-  - Danger checks (commit message length, naming conventions, etc)
-  - Terraform Formatting
-  - [TFLint](https://github.com/terraform-linters/tflint)
-  - Checkov (AWS Security Best Practices)
-  - Semantic Release
-  - [PR Labeler](https://github.com/actions/labeler/blob/master/README.md)
+## CI
 
-- Templates
-  - PRs
-  - Issues
+## Please export your AWS credentials in Github Secrets in order to run the CI jobs.
 
-- Automated Labeling of PRs
-  - GitHub workflow/template changes
-  - Documentation updates
-  - Semantic Release config
-  - General repo config
-
-- Contributing Guidelines
-- Automated Releasing based on a standardized commit message syntax
-- `.editorconfig` for IDEs
-
-## Things to configure
-- Dangerfile
-  - Whether you want to enforce a certain branching strategy
-  - Other options available
-
-- Contact details
-- Location of your Terraform for GHA
-
-## How to use
-1. Click on the green button in the top left called "Use Template"
-2. Modify key files according to the section above
-3. Set branch  protections/user access/etc
+GitHub actions jobs in place that deploys a serverless infastructure in nonprod on Pull Request and to Prod on Merge to the Master branch ( Prod config needs to be replicated)
