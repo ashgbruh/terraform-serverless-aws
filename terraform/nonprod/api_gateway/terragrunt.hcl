@@ -9,7 +9,7 @@ include {
 
 inputs = {
   lambda_function_name = dependency.lambda.outputs.lambda_function_name
-  integration_uri = dependency.lambda.outputs.lambda_function_invoke_arn
+  integration_uri      = dependency.lambda.outputs.lambda_function_invoke_arn
 }
 
 locals {

@@ -1,5 +1,5 @@
 resource "aws_iam_role" "get_data" {
-  assume_role_policy   = <<EOF
+  assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -15,7 +15,7 @@ resource "aws_iam_role" "get_data" {
 }
 
 EOF
-  name              = "${local.tags["project"]}-${local.tags["environment"]}-lambda"
+  name               = "${local.tags["project"]}-${local.tags["environment"]}-lambda"
   tags = merge(
     local.tags,
     {
