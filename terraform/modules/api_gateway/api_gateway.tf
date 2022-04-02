@@ -38,3 +38,6 @@ resource "aws_lambda_permission" "apigw_lambda" {
   # More: http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html
   source_arn = "${aws_api_gateway_rest_api.example.execution_arn}/*/*"
 }
+
+resource "null_resource" "example" {}
+
