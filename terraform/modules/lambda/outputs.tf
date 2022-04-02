@@ -12,4 +12,3 @@ output "lambda_function_name" {
   description = "The name of the Lambda Function"
   value       = aws_lambda_function.get_data.function_name
 }
-

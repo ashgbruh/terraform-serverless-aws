@@ -7,7 +7,7 @@ data "archive_file" "get_data" {
 }
 
 resource "aws_lambda_function" "get_data" {
-  description                    = "lambda function for ${local.tags["project"]} ${local.tags["environment"]}"
+  description = "lambda function for ${local.tags["project"]} ${local.tags["environment"]}"
   environment {
     variables = {
       #checkov:skip=CKV_AWS_173:vars not sensitive so no encryption required
@@ -39,4 +39,3 @@ resource "aws_cloudwatch_log_group" "loggroup" {
   name              = "/aws/lambda/${aws_lambda_function.get_data.function_name}"
   retention_in_days = var.log_retention_days
 }
-

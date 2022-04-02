@@ -7,9 +7,9 @@ include {
 }
 
 inputs = {
-  lambda_memory_size        = 128
-  lambda_timeout            = 300
-  table_name = dependency.dynamodb.outputs.dynamodb_table_id
+  lambda_memory_size = 128
+  lambda_timeout     = 300
+  table_name         = dependency.dynamodb.outputs.dynamodb_table_id
 }
 
 locals {
@@ -19,8 +19,3 @@ locals {
 terraform {
   source = "../../modules//lambda"
 }
-
-
-
-
-
