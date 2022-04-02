@@ -39,5 +39,9 @@ resource "aws_lambda_permission" "apigw_lambda" {
   source_arn = "${aws_api_gateway_rest_api.example.execution_arn}/*/*"
 }
 
-resource "null_resource" "example" {}
-
+resource "aws_api_gateway_rest_api" "example1" {
+  name = "example1"
+  endpoint_configuration {
+    types = ["REGIONAL"]
+  }
+}
