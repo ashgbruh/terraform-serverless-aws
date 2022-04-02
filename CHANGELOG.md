@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ashgbruh/terraform-serverless-aws/compare/v1.0.0...v1.1.0) (2022-04-02)
+
+
+### Features
+
+* **add-null-resource:** add null resource ([5d1c08e](https://github.com/ashgbruh/terraform-serverless-aws/commit/5d1c08e9ad4ba39f8dd70a6b08967fbd97a638d9))
+
 # 1.0.0 (2022-04-02)
 
 
