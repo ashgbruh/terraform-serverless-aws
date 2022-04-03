@@ -30,10 +30,10 @@ remote_state {
   backend = "s3"
   config = {
     encrypt        = true
-    bucket         = "bw-${local.environment}-terraform-state-files"
+    bucket         = "tmp-${local.environment}-terraform-state-files"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = local.region
-    dynamodb_table = "bw-${local.environment}-terraform-state"
+    dynamodb_table = "tmp-${local.environment}-terraform-state"
 
     s3_bucket_tags = {
       costcentre  = "${local.common_vars.locals.common_tags.costcentre}"
